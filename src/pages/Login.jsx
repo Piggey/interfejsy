@@ -28,7 +28,7 @@ export const Login = () => {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+            backgroundImage: 'url(src/assets/login.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -50,14 +50,14 @@ export const Login = () => {
               <LockOutlined />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Zaloguj się
             </Typography>
             <Box noValidate sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
                 required
                 fullWidth
-                label="Email Address"
+                label="Adres email"
                 autoComplete="email"
                 autoFocus
                 value={formEmail}
@@ -67,13 +67,13 @@ export const Login = () => {
                 margin="normal"
                 required
                 fullWidth
-                label="Password"
+                label="Hasło"
                 type="password"
                 autoComplete="current-password"
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label="Zapamiętaj mnie"
               />
               <Button
                 component={Link}
@@ -83,17 +83,17 @@ export const Login = () => {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Zaloguj się
               </Button>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
-                    Forgot password?
+                    Zapomniałeś hasła?
                   </Link>
                 </Grid>
                 <Grid item>
                   <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    {"Nie masz konta? Zarejestruj się"}
                   </Link>
                 </Grid>
               </Grid>
