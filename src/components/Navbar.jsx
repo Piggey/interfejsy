@@ -36,9 +36,11 @@ export const Navbar = () => {
           <Avatar
             alt="Logo"
             src="src/assets/edan_logo.png"
+            component={Link}
+            to="/"
             sx={{ width: 64, height: 64, marginRight: "8px" }}
           />
-          <Typography variant="h6" component="div">
+          <Typography variant="h4" component="div">
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               Edan
             </Link>
@@ -68,16 +70,10 @@ export const Navbar = () => {
               marginRight: "8px",
             }}
           >
-            <Typography
-              variant="body1"
-              style={{ marginRight: "8px" }}
-            >
+            <Typography variant="body1" style={{ marginRight: "8px" }}>
               {email}
             </Typography>
-            <Avatar
-              alt="User Avatar"
-              onClick={handleMenuClick}
-            />
+            <Avatar alt="User Avatar" onClick={handleMenuClick} />
             <Menu
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
