@@ -16,8 +16,6 @@ export const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const { email, logout } = useAuth();
 
-  const loggedIn = !!email;
-
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -62,7 +60,7 @@ export const Navbar = () => {
           </Button>
         </div>
 
-        {loggedIn ? (
+        {email ? (
           <div
             style={{
               display: "flex",
