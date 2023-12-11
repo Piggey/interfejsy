@@ -1,27 +1,21 @@
-import { AppBar, Toolbar, Typography, Button, Box, Avatar } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Avatar } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
-export const Navbar = ({ isLoggedIn, userName }) => {
+export const Navbar = ({ loggedIn, email }) => {
   return (
     <AppBar position="fixed">
-      <Toolbar>
-        {/* Logo firmy i nazwa */}
-        <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-          <Link to="/" style={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center' }}>
-            {/* Tutaj umieść swój obrazek/logo */}
-            <Avatar src="src/assets/edan_logo.png" alt="Logo" style={{ marginRight: '8px', width: '64px', height: '64px' }} />
-            <Typography variant="h6" component="div">
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Avatar alt="Logo" src="src/assets/edan_logo.png" sx={{ width: 64, height: 64, marginRight: '8px' }} />
+          <Typography variant="h6" component="div">
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
               Edan
-            </Typography>
-          </Link>
-        </Box>
+            </Link>
+          </Typography>
+        </div>
 
-        {/* Przyciski nawigacyjne (wyśrodkowane) */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
-          <Button color="inherit" component={Link} to="/">
-            Strona główna
-          </Button>
+        <div style={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
           <Button color="inherit" component={Link} to="/gallery">
             Galeria
           </Button>
@@ -34,15 +28,14 @@ export const Navbar = ({ isLoggedIn, userName }) => {
           <Button color="inherit" component={Link} to="/birthdays">
             Urodziny
           </Button>
-        </Box>
+        </div>
 
-        {/* Przycisk "Zaloguj się" lub imię i nazwisko zalogowanego użytkownika */}
-        {isLoggedIn ? (
+        {loggedIn ? (
           <Typography variant="body1" color="inherit" style={{ marginRight: '8px' }}>
-            Witaj, {userName}
+            Witaj, {email}
           </Typography>
         ) : (
-          <Button color="inherit" component={Link} to="/logowanie">
+          <Button color="inherit" component={Link} to="/login">
             Zaloguj się
           </Button>
         )}

@@ -10,7 +10,7 @@ export const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Navbar isLoggedIn={false} />
+      <Navbar loggedIn={false} />
       <Container sx={{ marginTop: '64px', flexGrow: 1 }}>
         {children}
       </Container>
