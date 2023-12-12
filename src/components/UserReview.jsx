@@ -15,7 +15,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-export const UserReview = ({ username, avatarSrc, rating, content, verified, likesCount, dislikesCount }) => {
+export const UserReview = ({ username, rating, content, verified, likesCount, dislikesCount }) => {
   const [likes, setLikes] = useState(likesCount || 0);
   const [dislikes, setDislikes] = useState(dislikesCount || 0);
   const [isLiked, setIsLiked] = useState(false);
@@ -52,7 +52,7 @@ export const UserReview = ({ username, avatarSrc, rating, content, verified, lik
       {/* Avatar i nazwa użytkownika obok na lewej stronie */}
       <Grid item xs={12} sm={4}>
         <Box display="flex" alignItems="center">
-          <Avatar src={avatarSrc} alt={username} />
+          <Avatar alt={username} />
           <Typography variant="subtitle1" sx={{ marginLeft: '8px' }}>
             {username}
           </Typography>
