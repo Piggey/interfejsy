@@ -5,13 +5,7 @@ import { Copyright } from "./Copyright";
 
 export const StickyFooter = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "90.8vh",
-      }}
-    >
+    <Box mt={12}>
       <Box
         component="footer"
         sx={{
