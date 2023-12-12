@@ -1,39 +1,40 @@
-import { Grid, Typography, IconButton, Paper } from "@mui/material";
+import { Grid, Typography, IconButton, Paper, Slide } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useState } from "react";
+import { imgGalleryData } from "../data/imageGallery";
 
 export const ImageGallery = () => {
-  const images = [
-    "src/assets/gallery_img1.jpg",
-    "src/assets/gallery_img2.jpg",
-    "src/assets/gallery_img3.jpg",
-    "src/assets/gallery_img4.jpg",
-    "src/assets/gallery_img5.jpg",
-  ];
-
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleNextImage = () => {
-    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setSelectedImageIndex(
+      (prevIndex) => (prevIndex + 1) % imgGalleryData.length
+    );
   };
 
   const handlePrevImage = () => {
     setSelectedImageIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+      (prevIndex) =>
+        (prevIndex - 1 + imgGalleryData.length) % imgGalleryData.length
     );
   };
+
+  const { name, description, imgSrc } = imgGalleryData[selectedImageIndex];
 
   return (
     <Grid container spacing={2}>
       {/* Duże zdjęcie po lewej stronie */}
       <Grid item xs={12} md={8} style={{ position: "relative" }}>
         <Paper elevation={3} style={{ position: "relative" }}>
-          <img
-            src={images[selectedImageIndex]}
-            alt={`Zdjęcie ${selectedImageIndex + 1}`}
-            style={{ width: "100%", height: "auto", maxHeight: "400px" }}
-          />
+          <Slide direction="right" in={true} timeout={500}>
+            <img
+              key={selectedImageIndex}
+              src={imgSrc}
+              alt={name}
+              style={{ width: "100%", height: "auto", maxHeight: "400px" }}
+            />
+          </Slide>
           <div
             style={{
               position: "absolute",
@@ -84,12 +85,9 @@ export const ImageGallery = () => {
         }}
       >
         <Typography variant="h4" style={{ marginBottom: "16px" }}>
-          Tytuł zdjęcia
+          {name}
         </Typography>
-        <Typography variant="body1">
-          Opis zdjęcia Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Typography>
+        <Typography variant="body1">{description}</Typography>
       </Grid>
 
       {/* Miniatury zdjęć pod dużym zdjęciem z odstępami */}
@@ -104,16 +102,17 @@ export const ImageGallery = () => {
           justifyContent: "center",
         }}
       >
-        {images.map((image, index) => (
+        {imgGalleryData.map((data, index) => (
           <img
             key={index}
-            src={image}
-            alt={`Miniatura ${index + 1}`}
+            src={data.imgSrc}
+            alt={data.name}
             style={{
               width: "64px",
               height: "64px",
               cursor: "pointer",
-              border: index === selectedImageIndex ? "2px solid blue" : "none", // Podświetlenie wybranej miniatury
+              border:
+                index === selectedImageIndex ? "2px solid lightblue" : "none",
             }}
             onClick={() => setSelectedImageIndex(index)}
           />
