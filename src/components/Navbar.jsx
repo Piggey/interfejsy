@@ -38,7 +38,7 @@ export const Navbar = () => {
             src="src/assets/edan_logo.png"
             component={Link}
             to="/"
-            sx={{ width: 64, height: 64, marginRight: "8px" }}
+            sx={{ width: 64, height: 64 }}
           />
           <Typography variant="h4" component="div">
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
