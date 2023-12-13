@@ -12,7 +12,12 @@ export const Bar = () => {
 
   return (
     <Grid container spacing={2}>
-      {/* Kategorie po lewej stronie */}
+      <Grid item xs={12}>
+        <Typography variant="h2" mt={4} align="center" gutterBottom>
+          Bar
+        </Typography>
+      </Grid>
+
       <Grid item xs={3}>
         <Typography variant="h6" gutterBottom>
           Kategorie
@@ -35,7 +40,6 @@ export const Bar = () => {
         ))}
       </Grid>
 
-      {/* Siatka zdjęć z podpisami po prawej stronie */}
       <Grid item xs={9} container spacing={2}>
         {products[selectedCategory]?.map((product, index) => (
           <Grid item xs={4} key={index}>
