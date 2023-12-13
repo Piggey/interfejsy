@@ -3,8 +3,7 @@ import { Typography, Grid, ListItem, ListItemIcon, ListItemText } from '@mui/mat
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export const Location = () => {
-  // Współrzędne lokalizacji
-  const locationCoordinates = [51.4006, 19.7022]; // Przykładowe współrzędne dla Piotrkowa Trybunalskiego
+  const locationCoordinates = [51.405888, 19.715845];
 
   return (
     <Grid container spacing={2}>
@@ -28,8 +27,15 @@ export const Location = () => {
             }
           />
         </ListItem>
-        <Typography variant="body2" sx={{ marginTop: 2 }}>
-          Tutaj możesz dodać dowolny tekst opisujący lokalizację.
+        <Typography variant="h5">
+          Godziny otwarcia
+        </Typography>
+        <Typography>
+          (wejście klientów do godz. 19:00)
+        </Typography>
+        <Typography>
+          Poniedziałek - Piątek: 15:00 - 20:00 <br />
+          Sobota - Niedziela: 10:00 - 20:00
         </Typography>
       </Grid>
 
