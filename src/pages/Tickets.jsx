@@ -19,13 +19,12 @@ export const Tickets = () => {
           color="text.secondary"
           component="p"
         >
-          Quickly build an effective pricing table for your potential customers
-          with this layout. It&apos;s built with default MUI components with
-          little customization.
+          Bilety są ważne przez miesiąc od momentu zakupu. <br />
+          Dla grup powyżej 10 osób wymagana jest rezerwacja sali.
         </Typography>
       </Grid>
 
-      <Grid container mt={8} spacing={5} alignItems="flex-end">
+      <Grid container mt={4} spacing={5} alignItems="flex-end">
         {tickets.map((ticket, index) => (
           <TicketKind key={index} ticket={ticket} />
         ))}
