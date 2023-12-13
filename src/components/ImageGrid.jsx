@@ -5,11 +5,11 @@ export const ImageGrid = () => {
   return (
     <Grid container spacing={2}>
       {imgGalleryData.map((img, index) => (
-        <Grid item xs={4} key={index}>
+        <Grid item xs={6} key={index}>
           <Paper elevation={3}>
             <img
               src={img.imgSrc}
-              alt={`Image ${index + 1}`}
+              alt={img.name}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </Paper>
