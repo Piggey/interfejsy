@@ -1,17 +1,44 @@
 /* eslint-disable react/prop-types */
-import { Typography, Grid } from '@mui/material';
+import { Grid, Typography, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import { format } from 'date-fns';
+import { pl } from 'date-fns/locale';
 
-export const ReservationSummary = ({ numberOfPeople, selectedRoom, selectedDate }) => {
+export const ReservationSummary = ({ numberOfPeople, selectedRoom, startDate, endDate }) => {
+  const date = format(startDate, 'dd MMMM yyyy', { locale: pl });
+  const startTime = format(startDate, "HH:MM", { locale: pl });
+  const endTime = format(endDate, "HH:MM", { locale: pl });
+
+  const totalPrice = Math.floor(Math.random() * (500 - 200 + 1) ) + 200;
+
   return (
     <Grid item xs={12}>
-      <Typography variant="h6">Podsumowanie:</Typography>
-      <Typography variant="body2">
-        Liczba osób: {numberOfPeople}
-        <br />
-        Sala: {selectedRoom}
-        <br />
-        Data i godzina: {selectedDate}
+      <Typography variant="h4" mt={6} mb={2}>
+        Podsumowanie:
       </Typography>
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell>Liczba osób:</TableCell>
+            <TableCell>{numberOfPeople}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Sala:</TableCell>
+            <TableCell>{selectedRoom}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Data i godzina:</TableCell>
+            <TableCell>{`${startTime} - ${endTime}, ${date}`}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              <strong>Cena:</strong>
+            </TableCell>
+            <TableCell>
+              <strong>{totalPrice} zł</strong>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
     </Grid>
   );
 };

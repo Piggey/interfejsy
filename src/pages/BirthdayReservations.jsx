@@ -35,7 +35,7 @@ export const BirthdayReservations = () => {
         selectedEndDate={selectedEndDate}
         setSelectedEndDate={setSelectedEndDate}
       />
-      <ReservationSummary />
+      <ReservationSummary numberOfPeople={numPeople} startDate={selectedStartDate} endDate={selectedEndDate} selectedRoom={selectedRoom} />
     </Grid>
   );
 };
