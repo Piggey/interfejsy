@@ -6,11 +6,11 @@ import { ReservationRoomSelection } from "../components/ReservationRoomSelection
 import { ReservationDateTime } from "../components/ReservationDateTime";
 import { ReservationSummary } from "../components/ReservationSummary";
 
-export const Birthdays = () => {
+export const BirthdayReservations = () => {
   const [numPeople, setNumPeople] = useState(1);
   const [selectedRoom, setSelectedRoom] = useState("");
-  const [selectedStartDate, setSelectedStartDate] = useState(null);
-  const [selectedEndDate, setSelectedEndDate] = useState(null);
+  const [selectedStartDate, setSelectedStartDate] = useState(new Date());
+  const [selectedEndDate, setSelectedEndDate] = useState(new Date());
 
   return (
     <Grid container spacing={2}>

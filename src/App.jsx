@@ -4,7 +4,7 @@ import { Home } from "./pages/Home";
 import { Gallery } from "./pages/Gallery";
 import { Bar } from "./pages/Bar";
 import { Tickets } from "./pages/Tickets";
-import { Birthdays } from "./pages/Birthdays";
+import { BirthdayReservations } from "./pages/BirthdayReservations";
 import { Login } from "./pages/Login";
 
 const router = createBrowserRouter([
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     path: "/birthdays",
     element: (
       <Layout>
-        <Birthdays />
+        <BirthdayReservations />
       </Layout>
     ),
   },
