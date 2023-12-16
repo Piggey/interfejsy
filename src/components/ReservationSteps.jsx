@@ -8,7 +8,7 @@ const steps = [
   "Podaj liczbę osób",
   "Wybierz salę",
   "Wybierz datę i godzinę",
-  "Rezerwuj!",
+  "Zarezerwuj!",
 ];
 
 const iconMap = {

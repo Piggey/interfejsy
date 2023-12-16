@@ -57,9 +57,11 @@ export const Navbar = () => {
           <Button color="inherit" component={Link} to="/tickets">
             Bilety
           </Button>
-          <Button color="inherit" component={Link} to="/birthdays">
-            Urodziny
-          </Button>
+          {email && (
+            <Button color="inherit" component={Link} to="/birthdays">
+              Urodziny
+            </Button>
+          )}
         </div>
 
         {email ? (
@@ -88,7 +90,11 @@ export const Navbar = () => {
               }}
             >
               <MenuItem onClick={handleClose}>Historia</MenuItem>
-              <MenuItem onClick={handleLogout}>Wyloguj się</MenuItem>
+              <MenuItem onClick={handleLogout}>
+                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                  Wyloguj się
+                </Link>
+              </MenuItem>
             </Menu>
           </div>
         ) : (
