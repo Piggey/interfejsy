@@ -6,6 +6,7 @@ import {
   Avatar,
   Menu,
   MenuItem,
+  Grid,
 } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -54,13 +55,16 @@ export const Navbar = () => {
           <Button color="inherit" component={Link} to="/bar">
             Bar
           </Button>
-          <Button color="inherit" component={Link} to="/tickets">
-            Bilety
-          </Button>
           {email && (
-            <Button color="inherit" component={Link} to="/birthdays">
-              Urodziny
-            </Button>
+            <Grid>
+              <Button color="inherit" component={Link} to="/tickets">
+                Bilety
+              </Button>
+
+              <Button color="inherit" component={Link} to="/birthdays">
+                Urodziny
+              </Button>
+            </Grid>
           )}
         </div>
 
@@ -91,7 +95,10 @@ export const Navbar = () => {
             >
               <MenuItem onClick={handleClose}>Historia</MenuItem>
               <MenuItem onClick={handleLogout}>
-                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                <Link
+                  to="/"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
                   Wyloguj się
                 </Link>
               </MenuItem>

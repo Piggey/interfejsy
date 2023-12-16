@@ -1,8 +1,32 @@
 /* eslint-disable react/prop-types */
-import { Grid, Card, CardHeader, CardContent, Box, Typography, CardActions, Button } from "@mui/material";
+import {
+  Grid,
+  Card,
+  CardHeader,
+  CardContent,
+  Box,
+  Typography,
+  CardActions,
+  Button,
+  Dialog,
+  DialogContent,
+  DialogActions,
+  DialogTitle,
+} from "@mui/material";
 import StarIcon from "@mui/icons-material/StarBorder";
+import { useState } from "react";
 
 export const TicketKind = ({ ticket }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleBuyTicket = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <Grid
       item
@@ -37,10 +61,10 @@ export const TicketKind = ({ ticket }) => {
             }}
           >
             <Typography component="h2" variant="h3" color="text.primary">
-              ${ticket.price}
+              {ticket.price}zł
             </Typography>
             <Typography variant="h6" color="text.secondary">
-              /mo
+              /os.
             </Typography>
           </Box>
           <ul>
@@ -57,11 +81,29 @@ export const TicketKind = ({ ticket }) => {
           </ul>
         </CardContent>
         <CardActions>
-          <Button fullWidth variant={ticket.buttonVariant}>
+          <Button
+            fullWidth
+            variant={ticket.buttonVariant}
+            onClick={handleBuyTicket}
+          >
             {ticket.buttonText}
           </Button>
         </CardActions>
       </Card>
+      <Dialog open={isModalOpen} onClose={handleCloseModal}>
+        <DialogTitle>Zakupiono bilet</DialogTitle>
+        <DialogContent>
+          <Typography>
+            Dziękujemy za zakup biletu! Potwierdzenie zostało wysłane na adres
+            e-mail.
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseModal} color="primary" autoFocus>
+            Zamknij
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Grid>
   );
 };
