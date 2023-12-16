@@ -93,7 +93,14 @@ export const Navbar = () => {
                 horizontal: "right",
               }}
             >
-              <MenuItem onClick={handleClose}>Historia</MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link
+                  to="/history"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Historia
+                </Link>
+              </MenuItem>
               <MenuItem onClick={handleLogout}>
                 <Link
                   to="/"

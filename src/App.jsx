@@ -6,6 +6,7 @@ import { Bar } from "./pages/Bar";
 import { Tickets } from "./pages/Tickets";
 import { BirthdayReservations } from "./pages/BirthdayReservations";
 import { Login } from "./pages/Login";
+import { History } from "./pages/History";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Login />
+      </Layout>
+    ),
+  },
+  {
+    path: "/history",
+    element: (
+      <Layout>
+        <History />
       </Layout>
     ),
   },
