@@ -31,9 +31,9 @@ export const UserReservations = ({ reservations }) => {
     <>
     {reservations.length > 0 ? (
       <List>
-        {reservations.map((r) => (
-          <ListItem key={r.id}>
-            <ReservationDetails reservation={r} />
+        {reservations.map((reservation) => (
+          <ListItem key={reservation.id}>
+            <ReservationDetails reservation={reservation} />
           </ListItem>
         ))}
       </List>
