@@ -13,6 +13,7 @@ import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
 import CheckIcon from '@mui/icons-material/Check';
 import { useState } from "react";
+import { useAuth } from "../auth/useAuth";
 
 // eslint-disable-next-line react/prop-types
 export const UserReview = ({ username, rating, content, verified, likesCount, dislikesCount }) => {
@@ -20,6 +21,7 @@ export const UserReview = ({ username, rating, content, verified, likesCount, di
   const [dislikes, setDislikes] = useState(dislikesCount || 0);
   const [isLiked, setIsLiked] = useState(false);
   const [isDisliked, setIsDisliked] = useState(false);
+  const { email } = useAuth();
 
   const handleLike = () => {
     if (isLiked) {
@@ -94,13 +96,13 @@ export const UserReview = ({ username, rating, content, verified, likesCount, di
           <Typography variant="body2" sx={{ marginRight: '8px' }}>
             Czy opinia była pomocna?
           </Typography>
-          <IconButton color="primary" onClick={handleLike}>
+          <IconButton color="primary" onClick={handleLike} disabled={!email}>
             {isLiked ? <ThumbUpAltIcon sx={{ color: 'black' }} /> : <ThumbUpAltOutlinedIcon sx={{ color: 'black' }} />}
           </IconButton>
           <Typography variant="body2" sx={{ marginRight: '8px' }}>
             {likes}
           </Typography>
-          <IconButton color="secondary" onClick={handleDislike}>
+          <IconButton color="secondary" onClick={handleDislike} disabled={!email}>
             {isDisliked ? (
               <ThumbDownAltIcon sx={{ color: 'black' }} />
             ) : (
