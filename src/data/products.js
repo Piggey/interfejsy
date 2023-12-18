@@ -3,46 +3,81 @@ export const products = {
     {
       name: "Kawa",
       price: "7,00zł",
-      image: "src/assets/coffee.jpg",
+      image: "src/assets/products/coffee.jpg",
     },
     {
       name: "Herbata",
       price: "5,00zł",
-      image: "src/assets/tea.jpg",
+      image: "src/assets/products/tea.jpg",
     },
     {
-      name: "Produkt 3",
-      price: "$3.49",
-      image: "https://example.com/product3.jpg",
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
     },
     {
-      name: "Produkt 3",
-      price: "$3.49",
-      image: "https://example.com/product3.jpg",
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
     },
     {
-      name: "Produkt 3",
-      price: "$3.49",
-      image: "https://example.com/product3.jpg",
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
     },
   ],
   slodycze: [
     {
-      name: "Produkt 3",
-      price: "$3.49",
-      image: "https://example.com/product3.jpg",
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
     },
     {
-      name: "Produkt 3",
-      price: "$3.49",
-      image: "https://example.com/product3.jpg",
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
+    },
+    {
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
+    },
+    {
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
+    },
+    {
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
+    },
+    {
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
     },
   ],
   przekaski: [
     {
-      name: "Produkt 3",
-      price: "$3.49",
-      image: "https://example.com/product3.jpg",
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
+    },
+    {
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
+    },
+    {
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
+    },
+    {
+      name: "Nazwa produktu",
+      price: "12,50zł",
+      image: "src/assets/products/default.jpg",
     },
   ]
 };

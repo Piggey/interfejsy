@@ -1,16 +1,22 @@
 export const userPurchases = {
   bilety: [
     {
-      id: 5324,
-      type: "Ulgowy",
-      purchaseDate: new Date(2023, 10, 18),
-      validTo: new Date(2023, 11, 18),
+      id: 5352,
+      type: "Grupowy",
+      purchaseDate: new Date(2023, 12, 18),
+      validTo: new Date(2024, 1, 18),
     },
     {
       id: 5324,
       type: "Ulgowy",
       purchaseDate: new Date(2023, 10, 18),
       validTo: new Date(2023, 11, 18),
+    },
+    {
+      id: 5215,
+      type: "Ulgowy",
+      purchaseDate: new Date(2023, 6, 7),
+      validTo: new Date(2023, 7, 7),
     },
   ],
   rezerwacje: [
@@ -22,6 +28,33 @@ export const userPurchases = {
       timeFrom: "16:00",
       timeTo: "20:00",
       price: 460,
+    },
+    {
+      id: 180,
+      room: "Sala 2",
+      numPeople: 6,
+      reservationDate: new Date(2022, 10, 18),
+      timeFrom: "17:00",
+      timeTo: "20:00",
+      price: 380,
+    },
+    {
+      id: 80,
+      room: "Sala 2",
+      numPeople: 6,
+      reservationDate: new Date(2021, 10, 18),
+      timeFrom: "17:00",
+      timeTo: "20:00",
+      price: 250,
+    },
+    {
+      id: 64,
+      room: "Sala 2",
+      numPeople: 6,
+      reservationDate: new Date(2020, 10, 18),
+      timeFrom: "17:00",
+      timeTo: "20:00",
+      price: 200,
     },
   ],
 };
