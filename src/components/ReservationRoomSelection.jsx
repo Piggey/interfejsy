@@ -4,15 +4,15 @@ import { Typography, Grid, Card, CardContent, CardMedia } from "@mui/material";
 const rooms = [
   {
     name: "Sala 1",
-    image: "url_do_zdjecia_sali1.jpg",
+    image: "src/assets/sala1.jpg",
   },
   {
     name: "Sala 2",
-    image: "url_do_zdjecia_sali2.jpg",
+    image: "src/assets/sala2.jpg",
   },
   {
     name: "Sala 3",
-    image: "url_do_zdjecia_sali3.jpg",
+    image: "src/assets/sala1.jpg",
   },
 ];
 
