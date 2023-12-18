@@ -18,6 +18,9 @@ const TicketDetails = ({ ticket }) => {
     setIsModalOpen(false);
   };
 
+  const isTicketExpired = ticket.validTo < Date.now();
+  const buttonText = isTicketExpired ? 'Bilet wykorzystany' : 'Drukuj bilet';
+
   return (
     <>
       <Paper elevation={3} style={{ padding: '16px', marginBottom: '16px', width: '100%' }}>
@@ -33,8 +36,14 @@ const TicketDetails = ({ ticket }) => {
         <Typography>
           {`Ważne do: ${validToDate}`}
         </Typography>
-        <Button variant="contained" color="primary" onClick={handlePrintTicket} style={{ float: 'right' }}>
-          Drukuj bilet
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handlePrintTicket}
+          style={{ float: 'right' }}
+          disabled={isTicketExpired}
+        >
+          {buttonText}
         </Button>
       </Paper>
 
