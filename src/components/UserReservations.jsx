@@ -5,8 +5,9 @@ import { pl } from "date-fns/locale";
 
 const ReservationDetails = ({ reservation }) => {
   const reservationDate = format(reservation.reservationDate, "dd MMMM yyyy", { locale: pl });
+
   return (
-    <Paper elevation={3} sptyle={{ padding: '16px', marginBottom: '16px', width: '100%' }}>
+    <Paper elevation={3} style={{ padding: '16px', marginBottom: '16px', width: '100%' }}>
       <Typography variant="subtitle1" style={{ fontWeight: 'bold', marginBottom: '8px' }}>
         {`Rezerwacja #${reservation.id}`}
       </Typography>
