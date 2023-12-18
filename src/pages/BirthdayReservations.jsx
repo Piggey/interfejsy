@@ -17,8 +17,9 @@ import { ReservationSummary } from "../components/ReservationSummary";
 export const BirthdayReservations = () => {
   const [numPeople, setNumPeople] = useState(1);
   const [selectedRoom, setSelectedRoom] = useState("");
-  const [selectedStartDate, setSelectedStartDate] = useState(new Date());
-  const [selectedEndDate, setSelectedEndDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedStartTime, setSelectedStartTime] = useState(new Date());
+  const [selectedEndTime, setSelectedEndTime] = useState(new Date());
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -47,15 +48,18 @@ export const BirthdayReservations = () => {
         setSelectedRoom={setSelectedRoom}
       />
       <ReservationDateTime
-        selectedStartDate={selectedStartDate}
-        setSelectedStartDate={setSelectedStartDate}
-        selectedEndDate={selectedEndDate}
-        setSelectedEndDate={setSelectedEndDate}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        selectedStartTime={selectedStartTime}
+        setSelectedStartTime={setSelectedStartTime}
+        selectedEndTime={selectedEndTime}
+        setSelectedEndTime={setSelectedEndTime}
       />
       <ReservationSummary
         numberOfPeople={numPeople}
-        startDate={selectedStartDate}
-        endDate={selectedEndDate}
+        selectedDate={selectedDate}
+        selectedStartTime={selectedStartTime}
+        selectedEndTime={selectedEndTime}
         selectedRoom={selectedRoom}
       />
       <Grid item xs={12} align="center">
