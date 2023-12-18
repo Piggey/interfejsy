@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Grid, Typography } from "@mui/material";
-import { DateTimePicker } from "@mui/x-date-pickers";
+import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 
 export const ReservationDateTime = ({
-  selectedStartDate,
-  setSelectedStartDate,
-  selectedEndDate,
-  setSelectedEndDate,
+  selectedDate,
+  setSelectedDate,
+  selectedStartTime,
+  setSelectedStartTime,
+  selectedEndTime,
+  setSelectedEndTime,
 }) => {
   const isHourInRange = (hour, isWeekend) => {
     const openingHours = {
@@ -19,18 +21,23 @@ export const ReservationDateTime = ({
       : hour >= openingHours.weekday.start && hour < openingHours.weekday.end;
   };
 
-  const disableTimeValidation = (date) => {
+  const disableTimeValidation = (date, selectedTime) => {
     const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+    const selectedHour = selectedTime.getHours();
 
-    return !isHourInRange(date.getHours(), isWeekend);
+    return !isHourInRange(selectedHour, isWeekend);
   };
 
-  const handleChangeStartDate = (newValue) => {
-    setSelectedStartDate(newValue);
+  const handleDateChange = (newDate) => {
+    setSelectedDate(newDate);
   };
 
-  const handleChangeEndDate = (newValue) => {
-    setSelectedEndDate(newValue);
+  const handleStartTimeChange = (newTime) => {
+    setSelectedStartTime(newTime);
+  };
+
+  const handleEndTimeChange = (newTime) => {
+    setSelectedEndTime(newTime);
   };
 
   return (
@@ -41,22 +48,37 @@ export const ReservationDateTime = ({
         </Typography>
       </Grid>
       <Grid item xs={5}>
-        <DateTimePicker
-          label="Początek rezerwacji"
-          value={selectedStartDate}
-          onChange={handleChangeStartDate}
-          orientation="landscape"
-          disableTimeValidation={disableTimeValidation}
+        <DatePicker
+          label="Data rezerwacji"
+          value={selectedDate}
+          onChange={handleDateChange}
+          renderInput={(props) => (
+            <input {...props} readOnly />
+          )}
           fullWidth
         />
       </Grid>
-      <Grid item>
-        <DateTimePicker
-          label="Koniec rezerwacji"
-          value={selectedEndDate}
-          onChange={handleChangeEndDate}
-          orientation="landscape"
-          disableTimeValidation={disableTimeValidation}
+      <Grid item xs={3}>
+        <TimePicker
+          label="Czas początkowy"
+          value={selectedStartTime}
+          onChange={handleStartTimeChange}
+          disableTimeValidation={(date) => disableTimeValidation(date, selectedStartTime)}
+          renderInput={(props) => (
+            <input {...props} readOnly />
+          )}
+          fullWidth
+        />
+      </Grid>
+      <Grid item xs={3}>
+        <TimePicker
+          label="Czas końcowy"
+          value={selectedEndTime}
+          onChange={handleEndTimeChange}
+          disableTimeValidation={(date) => disableTimeValidation(date, selectedEndTime)}
+          renderInput={(props) => (
+            <input {...props} readOnly />
+          )}
           fullWidth
         />
       </Grid>

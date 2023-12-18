@@ -3,10 +3,10 @@ import { Grid, Typography, Table, TableBody, TableCell, TableRow } from '@mui/ma
 import { format } from 'date-fns';
 import { pl } from 'date-fns/locale';
 
-export const ReservationSummary = ({ numberOfPeople, selectedRoom, startDate, endDate }) => {
-  const date = format(startDate, 'dd MMMM yyyy', { locale: pl });
-  const startTime = format(startDate, "HH:MM", { locale: pl });
-  const endTime = format(endDate, "HH:MM", { locale: pl });
+export const ReservationSummary = ({ numberOfPeople, selectedRoom, selectedDate, selectedStartTime, selectedEndTime }) => {
+  const date = format(selectedDate, 'dd MMMM yyyy', { locale: pl });
+  const startTime = format(selectedStartTime, "HH:MM", { locale: pl });
+  const endTime = format(selectedEndTime, "HH:MM", { locale: pl });
 
   const totalPrice = Math.floor(Math.random() * (500 - 200 + 1) ) + 200;
 
